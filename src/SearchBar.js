@@ -1,14 +1,18 @@
+/** src/SearchBar.js/
+Child component of PrimaryNavbar.js with input button for searching something in the website
+ */
 import React, { Component } from 'react';
 import { Button, Form, Input } from 'reactstrap';
 
 
 class SearchBar extends Component {
+    //@constructor
     constructor(props) {
         super(props)
     }
     render() {
         return (
-
+    // input form
             <Form inline>
                 <Input type="text" placeholder="Search" className="mr-sm-2" />
                 <Button variant="outline-success">Search</Button>

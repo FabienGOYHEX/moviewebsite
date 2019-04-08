@@ -1,5 +1,10 @@
-import React, { Component } from "react";
+/** src/HomeCardsimage.js/
+ Child component of HomeCards.js, which contains the card single image
+ */
 
+import React, { Component } from 'react'
+
+/** Components list of reactstrap library */
 import {
   Card,
   CardImg,
@@ -8,33 +13,36 @@ import {
   CardLink,
   CardTitle,
   CardSubtitle
-} from "reactstrap";
+} from 'reactstrap'
 
 class HomeCardsImage extends Component {
-  constructor(props) {
-    super(props);
+  // @constructor
+  constructor (props) {
+    super(props)
   }
-  render() {
+  render () {
     return (
+      // Fetching data from api omdb 
       <div>
         <Card>
           <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardTitle movieTitle={this.props.movieTitle}/>
+            <CardSubtitle movieSubtitle={this.props.movieSubtitle}/>
           </CardBody>
-          <img width="100%" src={this.props.image} alt="Card image cap" />
+          <img
+            width='100%'
+            src={this.props.image}
+            alt={this.props.movieTitle}
+          />
           <CardBody>
-            <CardText>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </CardText>
-            <CardLink href="#">Card Link</CardLink>
-            <CardLink href="#">Another Link</CardLink>
+            <CardText movieSynopsis={this.props.movieSynopsis}/>
+            <CardLink href='#'>Card Link</CardLink>
+            <CardLink href='#'>Another Link</CardLink>
           </CardBody>
         </Card>
       </div>
-    );
+    )
   }
 }
 
-export default HomeCardsImage;
+export default HomeCardsImage

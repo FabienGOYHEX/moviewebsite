@@ -1,3 +1,6 @@
+/** src/index.js
+ Parent component of App.js which send App.js content within the Html Id (Div) called "Root"
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

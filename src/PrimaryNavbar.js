@@ -1,11 +1,11 @@
+/** src/PrimaryNavbar.js/
+Child component of App.js which contains the menu
+ */
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import { Button } from 'reactstrap';
 
-
-
-
-
+/** Components list of reactstrap library */
 import {
   Collapse,
   NavbarToggler,
@@ -17,9 +17,10 @@ import {
 } from 'reactstrap';
 
 class PrimaryNavBar extends Component {
+  //@constructor
   constructor(props) {
     super(props);
-
+  // Burger and drop down menu component
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
@@ -34,6 +35,7 @@ class PrimaryNavBar extends Component {
 
   render() {
     return (
+      // list of every item of navbar
       <div>
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">MovieCentral</NavbarBrand>
