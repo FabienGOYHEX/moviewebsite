@@ -1,4 +1,4 @@
-/** src/HomeCardsimage.js/
+/** src/CardsComponents/HomeCardsimage.js/
  Child component of HomeCards.js, which contains the card single image
  */
 

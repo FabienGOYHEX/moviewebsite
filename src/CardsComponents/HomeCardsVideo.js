@@ -1,4 +1,4 @@
-/** src/HomeCardsVideo.js/
+/** src/CardsComponents/HomeCardsVideo.js/
  Child component of HomeCards.js, which contains the card video 
  */
 

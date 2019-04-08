@@ -1,4 +1,4 @@
-/** src/HomeCards.js
+/** src/CardsComponents/HomeCards.js
  Parent component which contains all the Homecards (video, images...)
  */
 

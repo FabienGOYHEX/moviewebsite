@@ -43,7 +43,7 @@ class PrimaryNavBar extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <SearchBar />
+                <SearchBar/>
               </NavItem>
               <NavItem>
                 <NavLink href="Movies.html">Movies</NavLink>

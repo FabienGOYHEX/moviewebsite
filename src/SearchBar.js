@@ -3,6 +3,7 @@ Child component of PrimaryNavbar.js with input button for searching something in
  */
 import React, { Component } from 'react';
 import { Button, Form, Input } from 'reactstrap';
+import { Row, Col } from "reactstrap";
 
 
 class SearchBar extends Component {
@@ -13,10 +14,11 @@ class SearchBar extends Component {
     render() {
         return (
     // input form
-            <Form inline>
-                <Input type="text" placeholder="Search" className="mr-sm-2" />
+            <Form  >
+                <Input type="text" placeholder="Search" className="mr-auto" />
                 <Button variant="outline-success">Search</Button>
             </Form>
+
 
         )
     }

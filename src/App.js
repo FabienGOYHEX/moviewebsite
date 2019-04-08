@@ -6,8 +6,11 @@ import logo from "./logo.svg";
 import "./App.css";
 import PrimaryNavBar from "./PrimaryNavbar";
 import NewsCarousel from "./NewsCarousel";
-import HomeCards from "./HomeCards";
+import HomeCards from "./CardsComponents/HomeCards";
 import { Container, Row, Col } from "reactstrap";
+import RightBox from "./RightBox/RightBox";
+import Footer from "./Footer.js"
+
 
 class App extends Component {
   render() {
@@ -31,13 +34,16 @@ class App extends Component {
             </Col>
 
             <Col style={{backgroundColor: 'blue', padding:'15px'}} md='4' xs= '12'>
-              <div>RIGHT BOX</div>
+              <RightBox/>
             </Col>
           </Row>
+          <Footer/>
         </Container>
       </div>
     );
   }
 }
+
+
 
 export default App;
