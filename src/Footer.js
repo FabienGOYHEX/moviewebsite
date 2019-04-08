@@ -9,7 +9,7 @@ class Footer extends Component {
         return (
             <footer style={{backgroundColor:'pink'}}>
                 <img src="https://via.placeholder.com/150" />
-                <i  class="fab fa-facebook-square fa-5x"></i>
+                <i  class="fab fa-facebook-square fa-5x">youhou</i>
                 
 
             </footer> 
