@@ -1,6 +1,13 @@
+/** src/HomeCardsVideo.js/
+ Child component of HomeCards.js, which contains the card video 
+ */
+
 import React, { Component } from "react";
+
+//import ReactPlayer dependancies in order to read video
 import ReactPlayer from 'react-player'
 
+/** Components list of reactstrap library */
 import {
   Card,
   CardText,
@@ -11,6 +18,7 @@ import {
 } from "reactstrap";
 
 class HomeCardsVideo extends Component {
+  //@constructor
   constructor(props) {
     super(props);
   }
@@ -19,15 +27,12 @@ class HomeCardsVideo extends Component {
       <div>
         <Card>
           <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardTitle movieTitle={this.props.movieTitle}/>
+            <CardSubtitle movieSubtitle={this.props.movieSubtitle}/>
           </CardBody>
           <ReactPlayer url={this.props.video} controls width='100%'/>
           <CardBody>
-            <CardText>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </CardText>
+            <CardText movieSynopsis={this.props.movieSynopsis}/>
             <CardLink href="#">Card Link</CardLink>
             <CardLink href="#">Another Link</CardLink>
           </CardBody>

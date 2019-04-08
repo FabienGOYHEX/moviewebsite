@@ -1,3 +1,6 @@
+/** src/App.js
+ Parent component which imports all the website components 
+ */
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
