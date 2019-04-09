@@ -3,7 +3,6 @@ Child component of App.js which contains the menu
  */
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
-import { Button } from 'reactstrap';
 
 /** Components list of reactstrap library */
 import {
