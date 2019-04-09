@@ -8,7 +8,6 @@ import { Row, Col } from "reactstrap";
 /** Components list of reactstrap library */
 import {
   Card,
-  CardImg,
   CardText,
   CardBody,
   CardLink,

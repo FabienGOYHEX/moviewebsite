@@ -3,7 +3,6 @@ Child component of PrimaryNavbar.js with input button for searching something in
  */
 import React, { Component } from 'react';
 import { Button, Form, Input } from 'reactstrap';
-import { Row, Col } from "reactstrap";
 
 
 class SearchBar extends Component {
