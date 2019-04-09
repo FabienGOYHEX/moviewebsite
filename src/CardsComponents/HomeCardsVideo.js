@@ -32,8 +32,9 @@ class HomeCardsVideo extends Component {
           </CardBody>
           <ReactPlayer url={this.props.video} controls width='100%'/>
           <CardBody>
-            <CardText movieSynopsis={this.props.movieSynopsis}>blablabla</CardText>
-            <CardText movieSynopsis={this.props.movieSynopsis}>blablabla</CardText>
+            <CardText>{this.props.movieSynopsis}blablabla</CardText>
+            <CardText>{this.props.movieSynopsis}blablabla</CardText>
+         
             <CardLink href="#">Card Link</CardLink>
             <CardLink href="#">Another Link</CardLink>
           </CardBody>
