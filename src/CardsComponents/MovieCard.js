@@ -1,24 +1,32 @@
+/* './src/CardsComponents/MovieCard.js'
+Parent component which contains MovieCardVideo and MovieCardGallery
+ */
 import React, { Component } from "react";
-import HomeCardsVideo from './HomeCards'
+import MovieCardVideo from './MovieCardVideo'
+import MovieCardGallery from './MovieCardGallery'
 import { Row, Col } from "reactstrap";
 
-class movieCard extends Component {
-
+class MovieCard extends Component {
     render() {
         return (
-            <Row>
-                <Col>
-                    <h2>TITLE</h2>
-                    <Row>
-                        <Col>
-                            <HomeCardsVideo video={'https://www.youtube.com/embed/CTuGTLx2iEI'} />
-                        </Col>
-                    </Row>
-
-                </Col>
-            </Row>
+            <div>
+                <Row>
+                    <Col>
+                        <MovieCardVideo video={'https://www.youtube.com/embed/CTuGTLx2iEI'}
+                         movieTitle={'Dumbo'}
+                         movieSubtitle={'The Great'}
+                         movieDirector={'John Wayne'} 
+                          />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <MovieCardGallery />
+                    </Col>
+                </Row>
+            </div>
         );
     }
 }
 
-export default movieCard;
+export default MovieCard;
