@@ -7,7 +7,6 @@ import React, { Component } from 'react'
 /** Components list of reactstrap library */
 import {
   Card,
-  CardImg,
   CardText,
   CardBody,
   CardLink,
