@@ -33,10 +33,6 @@ class App extends Component {
             <Col style={{backgroundColor: 'red', padding:'15px'}}>
               <HomeCards />
             </Col>
-            <Col>
-            <MovieCardGallery />
-            </Col>
-
             <Col style={{backgroundColor: 'blue', padding:'15px'}} md='4' xs= '12'>
               <RightBox/>
             </Col>
