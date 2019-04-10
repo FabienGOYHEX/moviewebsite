@@ -33,6 +33,7 @@ class Footer extends Component {
                <a href="#"> <i class="fas fa-arrow-alt-circle-up fa-3x"></i></a>
              
 
+
             </footer> 
         );
     }
