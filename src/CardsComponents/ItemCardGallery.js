@@ -1,11 +1,11 @@
-/** src/CardsComponents/MovieCardGallery.js
- * Child of MovieCard.js - Card which contains all the images relative to the movie
+/** src/CardsComponents/ItemCardGallery.js
+ * Child of ItemCard.js - Card which contains all the images relative to the movie
  */
 import React, { Component } from "react";
 import { Row, Col } from "reactstrap";
 import Image from 'react-bootstrap/Image'
 
-class MovieCardGallery extends Component {
+class ItemCardGallery extends Component {
     render() {
         return (
                 <Row>
@@ -33,4 +33,4 @@ class MovieCardGallery extends Component {
 }
 
 
-export default MovieCardGallery;
+export default ItemCardGallery;

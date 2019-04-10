@@ -23,7 +23,7 @@ class HomeCards extends Component {
             <Col>
             <HomeCardsVideo video={'https://www.youtube.com/embed/CTuGTLx2iEI'}/>
             <br/>
-            <HomeCardsImage movieTitle={"Toto"} image={'https://via.placeholder.com/500x300'} alt={""}/>
+            <HomeCardsImage ItemTitle={"Toto"} image={'https://via.placeholder.com/500x300'} alt={""}/>
             <br/>
             <HomeCardsImage2 image={'https://via.placeholder.com/250x300'} alt={""} image2={'https://via.placeholder.com/250x300'} alt={""}/>
             </Col>
