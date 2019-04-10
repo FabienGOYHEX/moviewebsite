@@ -10,12 +10,17 @@ import HomeCards from "./CardsComponents/HomeCards";
 import { Container, Row, Col } from "reactstrap";
 import RightBox from "./RightBox/RightBox";
 import Footer from "./Footer.js"
-import MovieCardGallery from './CardsComponents/MovieCardGallery'
-
+import AllItemList from "./CardsComponents/AllItemList";
+//import ItemsProps from './CardsComponents/props' (à reactiver pour AllItemList)
 
 class App extends Component {
   render() {
     return (
+      /* Pour appeler les props du composant AllItemList; il faut les mettre dans un Row, Col, de la meme maniere que HomeCards, etc.     
+              AllItemList {...ItemsProps} />
+              <AllItemList {...ItemsProps} />
+              <AllItemList {...ItemsProps} />
+*/
       <div className="PrimaryContainer">
         <Container>
           <Row>

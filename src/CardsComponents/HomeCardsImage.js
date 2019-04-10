@@ -22,24 +22,22 @@ class HomeCardsImage extends Component {
   render () {
     return (
       // Fetching data from api omdb 
-      <div>
         <Card>
           <CardBody>
-            <CardTitle movieTitle={this.props.movieTitle}/>
-            <CardSubtitle movieSubtitle={this.props.movieSubtitle}/>
+            <CardTitle ItemTitle={this.props.ItemTitle}/>
+            <CardSubtitle ItemSubtitle={this.props.ItemSubtitle}/>
           </CardBody>
           <img
             width='100%'
             src={this.props.image}
-            alt={this.props.movieTitle}
+            alt={this.props.ItemTitle}
           />
           <CardBody>
-            <CardText movieSynopsis={this.props.movieSynopsis}/>
+            <CardText ItemSynopsis={this.props.ItemSynopsis}/>
             <CardLink href='#'>Card Link</CardLink>
             <CardLink href='#'>Another Link</CardLink>
           </CardBody>
         </Card>
-      </div>
     )
   }
 }
