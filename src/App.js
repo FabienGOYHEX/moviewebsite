@@ -10,6 +10,7 @@ import HomeCards from "./CardsComponents/HomeCards";
 import { Container, Row, Col } from "reactstrap";
 import RightBox from "./RightBox/RightBox";
 import Footer from "./Footer.js"
+import MovieCardGallery from './CardsComponents/MovieCardGallery'
 
 
 class App extends Component {
@@ -31,6 +32,9 @@ class App extends Component {
           <Row className='no-gutters' md='8' xs= '12'>
             <Col style={{backgroundColor: 'red', padding:'15px'}}>
               <HomeCards />
+            </Col>
+            <Col>
+            <MovieCardGallery />
             </Col>
 
             <Col style={{backgroundColor: 'blue', padding:'15px'}} md='4' xs= '12'>
