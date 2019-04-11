@@ -2,8 +2,6 @@
  Parent component which imports all the website components 
  */
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
 import PrimaryNavBar from "./PrimaryNavbar";
 import NewsCarousel from "./NewsCarousel";
 import HomeCards from "./CardsComponents/HomeCards";
