@@ -5,8 +5,8 @@ import React, { Component } from 'react';
 import { Button, Form, Input } from 'reactstrap';
 import axios from 'axios';
 
-const API_KEY = '81cccefa5d8106ac2032d82235c675bc';
-
+//const API_KEY = '81cccefa5d8106ac2032d82235c675bc';
+const API_KEY = '2eccd85a';
 
 class SearchBar extends Component {
     //@constructor
@@ -27,7 +27,8 @@ class SearchBar extends Component {
             e.preventDefault();
             const { inputItem } = this.state;
 
-            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${inputItem}`)
+            //axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${inputItem}`)
+            axios.get(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${inputItem}`)
                 .then(response => {
                     const { search = [], totalResults = '0' } = response
                     this.props.onResults(search)
@@ -37,7 +38,7 @@ class SearchBar extends Component {
         render() {
             return (
                 // input form
-                <Form onSubmit={this.sumbitHandler}  >
+                <Form onSubmit={this.submitHandler}  >
                     <Input
                         autoFocus
                         onChange={this.searchHandler}

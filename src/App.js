@@ -12,6 +12,18 @@ import AllItemList from "./CardsComponents/AllItemList";
 //import ItemsProps from './CardsComponents/props' (à reactiver pour AllItemList)
 
 class App extends Component {
+  //@constructor
+  constructor(props){
+    super(props)
+    this.state = { /*usedSearch: false,*/ results: [] }
+  }
+
+  renderResults(){
+		return this.state.results.length === 0 
+			? <p>Sorry! Results not found!</p> 
+			: <AllItemList movies={this.state.results} />
+	}
+
   render() {
     return (
       /* Pour appeler les props du composant AllItemList; il faut les mettre dans un Row, Col, de la meme maniere que HomeCards, etc.     
@@ -34,7 +46,7 @@ class App extends Component {
 
           <Row className='no-gutters' md='8' xs= '12'>
             <Col style={{backgroundColor: 'red', padding:'15px'}}>
-              <HomeCards />
+              <AllItemList />
             </Col>
             <Col style={{backgroundColor: 'blue', padding:'15px'}} md='4' xs= '12'>
               <RightBox/>
