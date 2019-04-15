@@ -8,17 +8,15 @@ class App2 extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            hits: [],
-            isLoading: false
+            hits: []
         }
     }
 
     componentDidMount() {
-        axios.get('https://api.themoviedb.org/3/movie/popular?api_key=81cccefa5d8106ac2032d82235c675bc&append_to_response=images,credits')
-        //axios.get(' https://api.themoviedb.org/3/movie/297802?api_key=81cccefa5d8106ac2032d82235c675bc&append_to_response=images,credits')
+        axios.get('https://api.themoviedb.org/3/movie/popular?api_key=81cccefa5d8106ac2032d82235c675bc')
             .then(response => {
                 this.setState({
-                    hits: response.data.results[1]
+                    hits: response.data
                 })
 
             })
@@ -26,7 +24,8 @@ class App2 extends Component {
     render() {
         return (
             <div>
-             <p>{this.state.hits.overview}</p>  
+             <h1> {this.state.hits.page}
+                 </h1>  
             </div>
         );
     }
