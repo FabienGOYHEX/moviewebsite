@@ -37,7 +37,7 @@ class SearchBar extends Component {
         render() {
             return (
                 // input form
-                <Form onSubmit={this.sumbitHandler}  >
+                <Form onSubmit={this.submitHandler}  >
                     <Input
                         autoFocus
                         onChange={this.searchHandler}
