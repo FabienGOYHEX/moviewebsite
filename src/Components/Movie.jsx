@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardText, CardBody,
+import { Card, CardText, Button, CardBody,
     CardTitle, CardSubtitle } from 'reactstrap';
 import MovieDetail from './MovieDetail'
 
@@ -21,8 +21,7 @@ class Movie extends Component {
     }
 
     HandleCardClick = () => {
-        console.log('toto');
-        
+  
         this.setState({ isOpen: true });
       };
     
@@ -38,10 +37,9 @@ console.log(this.props)
                 <Card>
                     <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${this.props.poster_path}`} alt=""/>
                     <CardBody>
-                        <CardTitle className="movie__title">{this.props.title}</CardTitle>
-                        <CardSubtitle>Synopsis</CardSubtitle>
-                        <CardText>{this.props.overview}</CardText>
-                        <input type="button" onClick={this.HandleCardClick} value="Show More" />
+                        <CardTitle className="movie__title" style={{fontWeight:'bold'}}>{this.props.title}</CardTitle>
+                        <CardSubtitle>Release date: {this.props.release_date}</CardSubtitle>
+                        <Button color="primary" onClick={this.HandleCardClick}>Show More</Button>
                     </CardBody>
                 </Card>
                 <MovieDetail isOpen={this.state.isOpen} onClosed={this.handleModalClose} {...this.props} />

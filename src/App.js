@@ -6,13 +6,15 @@ import React, { Component } from "react";
 import Movies from './Components/Movies';
 import Search from './Components/Search';
 
+const API_KEY = '81cccefa5d8106ac2032d82235c675bc';
+
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       movies: [],
-      query: ''
+      query:'' 
     };
 
     this.onInput = this.onInput.bind(this);
@@ -20,14 +22,14 @@ class App extends Component {
 
   onInput(query) {
     this.setState({
-      query
+      query 
     });
 
     this.searchMovie(query);
   }
 
   getPopularMovies() {
-    const url = `https://api.themoviedb.org/3/movie/popular?api_key=cfe422613b250f702980a3bbf9e90716`;
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
 
     fetch(url)
       .then(response => response.json())
