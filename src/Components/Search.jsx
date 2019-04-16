@@ -2,12 +2,13 @@
 
  import React from 'react';
  import PropTypes from 'prop-types';
- import { Input, Form, Container } from 'reactstrap';
+ import { Input, Form, Container, Button} from 'reactstrap';
 
 const Search = props => (
     <Container>
-    <Form className="search" onInput={event => props.onInput(event.target.value)} style={{padding:'50px'}}>
-    <Input placeholder="Search for a movie..." autoFocus required className="mr-auto" type="search" value={props.query}/>
+    <Form className="search" style={{padding:'50px', display:'flex'}}>
+    <Input placeholder="Search for a movie..." autoFocus required className="mr-auto" type="search" value={props.query}  onInput={event => props.onInput(event.target.value)}/>
+    <Button onClick={props.onClick}>Search</Button>
     </Form>
     </Container>
   );

@@ -3,10 +3,10 @@
  */
 
 import React, { Component } from "react";
-import Movies from './Components/Movies';
-import Search from './Components/Search';
+import Movies from "./Components/Movies";
+import Search from "./Components/Search";
 
-const API_KEY = '81cccefa5d8106ac2032d82235c675bc';
+const API_KEY = "81cccefa5d8106ac2032d82235c675bc";
 
 class App extends Component {
   constructor(props) {
@@ -14,18 +14,22 @@ class App extends Component {
 
     this.state = {
       movies: [],
-      query:'' 
+      query: ""
     };
 
     this.onInput = this.onInput.bind(this);
+    this.onClick = this.onClick.bind(this);
+
   }
 
   onInput(query) {
     this.setState({
-      query 
+      query
     });
+  }
 
-    this.searchMovie(query);
+  onClick() {
+    this.searchMovie(this.state.query);
   }
 
   getPopularMovies() {
@@ -36,7 +40,7 @@ class App extends Component {
       .then(data => {
         this.setState({
           movies: data.results
-        })
+        });
       });
   }
 
@@ -48,21 +52,27 @@ class App extends Component {
       .then(data => {
         this.setState({
           movies: data.results
-        })
+        });
       });
   }
 
   componentDidMount() {
-    this.getPopularMovies();
+    //this.getPopularMovies();
   }
 
   render() {
     const { movies, query } = this.state;
-    const isSearched = query => item => !query || item.title.toLowerCase().includes(query.toLowerCase());
+    const isSearched = query => item =>
+      !query || item.title.toLowerCase().includes(query.toLowerCase());
 
     return (
       <div className="app">
-        <Search query={query} onInput={this.onInput} placeholder="Search for Movie Title …" />
+        <Search
+          query={query}
+          onInput={this.onInput}
+          placeholder="Search for Movie Title …"
+          onClick={this.onClick}
+        />
         <Movies movies={movies.filter(isSearched(query))} />
       </div>
     );
