@@ -4,7 +4,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Movie from './Movie';
-import MovieDetail from './MovieDetail'
 
 const Movies = props => (
     <ul className="movies">

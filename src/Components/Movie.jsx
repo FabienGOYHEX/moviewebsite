@@ -3,14 +3,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardText, CardBody,
-    CardTitle, CardSubtitle, Button } from 'reactstrap';
+    CardTitle, CardSubtitle } from 'reactstrap';
 import MovieDetail from './MovieDetail'
 
 class Movie extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isModalOpen: false
+            isOpen: false
         }
 
         Movie.propTypes = {
@@ -20,29 +20,31 @@ class Movie extends Component {
         };
     }
 
-    handleCardClick = () => {
-        this.setState({ isModalOpen: true });
+    HandleCardClick = () => {
+        console.log('toto');
+        
+        this.setState({ isOpen: true });
       };
     
       handleModalClose = () => {
-        this.setState({ isModalOpen: false });
+        this.setState({ isOpen: false });
       };
 
 
     render() {
-
+console.log(this.props)
         return (
             <div className="movie">
                 <Card>
-                    <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${this.props.poster_path}`}/>
+                    <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${this.props.poster_path}`} alt=""/>
                     <CardBody>
                         <CardTitle className="movie__title">{this.props.title}</CardTitle>
                         <CardSubtitle>Synopsis</CardSubtitle>
-                        <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                        <Button onClick={this.HandleCardClick}>Show More</Button>
+                        <CardText>{this.props.overview}</CardText>
+                        <input type="button" onClick={this.HandleCardClick} value="Show More" />
                     </CardBody>
                 </Card>
-                <MovieDetail isModalOpen={this.state.isModalOpen} onModalClose={this.handleModalClose}/>
+                <MovieDetail isOpen={this.state.isOpen} onClosed={this.handleModalClose} {...this.props} />
             </div>
         )
     }

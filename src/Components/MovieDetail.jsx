@@ -9,13 +9,14 @@ class MovieDetail extends Component {
   render() {
     return (
       <div>
-        <Modal isOpen={this.props.isModalOpen} onClose={this.props.onModalClose} className={this.props.className}>
+        <Modal isOpen={this.props.isOpen} onClosed={this.props.onClosed} className={this.props.className}>
           <ModalHeader>Modal title</ModalHeader>
           <ModalBody>
+          <p>{this.props.overview}</p>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.props.onModalClose}>Do Something</Button>{' '}
-            <Button color="secondary" onClick={this.props.onModalClose}>Cancel</Button>
+            <Button color="primary" onClick={this.props.onClosed}>Do Something</Button>{' '}
+            <Button color="secondary" onClick={this.props.onClosed}>Cancel</Button>
           </ModalFooter>
         </Modal>
       </div>
