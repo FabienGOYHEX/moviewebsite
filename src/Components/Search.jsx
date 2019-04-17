@@ -3,6 +3,7 @@
  import React from 'react';
  import PropTypes from 'prop-types';
  import { Input, Form, Container, Button} from 'reactstrap';
+ import {BrowserRouter,Switch,Route, Link,NavLink, Redirect} from "react-router-dom"
 
 const Search = props => (
     <Container>
