@@ -2,7 +2,7 @@
 Child component of App.js which contains the menu
  */
 import React, { Component } from 'react';
-import SearchBar from './SearchBar';
+
 
 /** Components list of reactstrap library */
 import {
@@ -37,13 +37,10 @@ class PrimaryNavBar extends Component {
       // list of every item of navbar
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">MovieCentral</NavbarBrand>
+          <NavbarBrand> <img src={require("./Logo.png")} alt="Movie Central logo" style={{width: "75%"}}/> </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <SearchBar />
-              </NavItem>
               <NavItem>
                 <NavLink href="Movies.html">Movies</NavLink>
               </NavItem>
