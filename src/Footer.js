@@ -4,6 +4,7 @@ Child component of App.js which contains the social Networks, the top button and
 import React, { Component } from 'react';
 import  "./App.css"
 import {Row,Col} from 'reactstrap'
+//import Logo from "./Logo.png";
 
 class Footer extends Component {
 
@@ -12,7 +13,7 @@ class Footer extends Component {
             <footer >
             <Row>
                 <Col>
-                <img src="https://via.placeholder.com/150" alt="Movie Central logo" />
+                <img src={require("./Logo.png")} alt="Movie Central logo" style={{width:"150px", height:"150px"}}/>
                 </Col>
             </Row>
             <Row>
