@@ -24,22 +24,20 @@ class HomeCardsVideo extends Component {
   }
   render() {
     return (
-      <div>
         <Card>
           <CardBody>
-            <CardTitle movieTitle={this.props.movieTitle}/>
-            <CardSubtitle movieSubtitle={this.props.movieSubtitle}/>
+            <CardTitle ItemTitle={this.props.ItemTitle}/>
+            <CardSubtitle ItemSubtitle={this.props.ItemSubtitle}/>
           </CardBody>
           <ReactPlayer url={this.props.video} controls width='100%'/>
           <CardBody>
-            <CardText>{this.props.movieSynopsis}blablabla</CardText>
-            <CardText>{this.props.movieSynopsis}blablabla</CardText>
+            <CardText>{this.props.ItemSynopsis}blablabla</CardText>
+            <CardText>{this.props.ItemSynopsis}blablabla</CardText>
          
             <CardLink href="#">Card Link</CardLink>
             <CardLink href="#">Another Link</CardLink>
           </CardBody>
         </Card>
-      </div>
     );
   }
 }

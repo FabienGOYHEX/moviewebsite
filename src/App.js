@@ -66,6 +66,7 @@ class App extends Component {
       !query || item.title.toLowerCase().includes(query.toLowerCase());
 
     return (
+     
       <div className="app">
         <Search
           query={query}
