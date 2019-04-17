@@ -2,16 +2,6 @@
  Parent component which imports all the website components
  */
 
-<<<<<<< HEAD
-import React, { Component } from 'react'
-import AppRouter from './AppRouter'
-
-class App extends Component {
-  render () {
-    return (
-      <div className='app'>
-        <AppRouter />
-=======
 import React, { Component } from "react";
 import Movies from "./Components/Movies";
 import Search from "./Components/Search";
@@ -96,7 +86,6 @@ class App extends Component {
         />
         <Movies movies={movies.filter(isSearched(query))} />
         <Footer />
->>>>>>> 6860d2f0a4b7b645087642d0d2f6770bdd1743c8
       </div>
     );
   }
