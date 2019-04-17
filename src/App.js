@@ -7,6 +7,8 @@ import Movies from "./Components/Movies";
 import Search from "./Components/Search";
 import Footer from "./Footer";
 import PrimaryNavBar from "./PrimaryNavbar";
+import NewsCarousel from './NewsCarousel';
+//import HomeCards from './CardsComponents/HomeCards'
 
 const API_KEY = "81cccefa5d8106ac2032d82235c675bc";
 
@@ -16,12 +18,23 @@ class App extends Component {
 
     this.state = {
       movies: [],
-      query: ""
+      query: "",
+      sliderOn: true
     };
 
     this.onInput = this.onInput.bind(this);
     this.onClick = this.onClick.bind(this);
     this.onKeyPress = this.onKeyPress.bind(this);
+  }
+
+  isCarousel = () => {
+    if (this.state.sliderOn){
+      console.log('hello');
+      
+      return <NewsCarousel/>
+    } else {
+      return null
+    }
   }
 
   onInput(query) {
@@ -48,7 +61,8 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          movies: data.results
+          movies: data.results,
+          sliderOn: false
         });
       });
   }
@@ -84,6 +98,7 @@ class App extends Component {
           onClick={this.onClick}
           onKeyPress={this.onKeyPress}
         />
+        <div>{this.isCarousel}</div>
         <Movies movies={movies.filter(isSearched(query))} />
         <Footer />
       </div>
