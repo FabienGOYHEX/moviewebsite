@@ -17,7 +17,6 @@ class MovieDetail extends Component {
           <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${this.props.backdrop_path}`} alt=''/>
           <h3>Overview:</h3>
           <p>{this.props.overview}</p>
-          <p>Popularity: {this.props.popularity}</p>
           <p>Average score: {this.props.vote_average}</p>
           <p>Votes: {this.props.vote_count}</p>
           </ModalBody>
