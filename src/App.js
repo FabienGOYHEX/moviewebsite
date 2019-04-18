@@ -8,7 +8,7 @@ import Search from "./Components/Search";
 import Footer from "./Footer";
 import PrimaryNavBar from "./PrimaryNavbar";
 import NewsCarousel from './NewsCarousel';
-//import HomeCards from './CardsComponents/HomeCards'
+import HomeCards from './CardsComponents/HomeCards'
 
 const API_KEY = "81cccefa5d8106ac2032d82235c675bc";
 
@@ -98,7 +98,8 @@ class App extends Component {
           onClick={this.onClick}
           onKeyPress={this.onKeyPress}
         />
-        <div>{this.isCarousel}</div>
+        <NewsCarousel />
+        <HomeCards />
         <Movies movies={movies.filter(isSearched(query))} />
         <Footer />
       </div>
