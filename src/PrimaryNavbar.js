@@ -48,10 +48,13 @@ class PrimaryNavBar extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink to="/Film-list">Movies</NavLink>
+                <NavLink to="/Popular-Films">Popular Movies </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="TvShows.html">TV Shows</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/Now-playing">Now Playing</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
