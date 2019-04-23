@@ -1,14 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-
-import MoviesResults from "./Components/MoviesResults";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./HomePage";
+import SearchResults from "./SearchResults";
 
 function AppRouter() {
   return (
     <Router>
-      <Route exact path="/" component={HomePage} />
-      <Route path="/Components/MoviesResults" component={MoviesResults} />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/Search-results" component={SearchResults} />
+      </Switch>
     </Router>
   );
 }

@@ -3,12 +3,10 @@ import Movies from "./Components/Movies";
 import Search from "./Components/Search";
 import Footer from "./Footer";
 import PrimaryNavBar from "./PrimaryNavbar";
-import NewsCarousel from './NewsCarousel';
-import HomeCards from './CardsComponents/HomeCards'
 
 const API_KEY = "81cccefa5d8106ac2032d82235c675bc";
 
-class HomePage extends Component {
+class SearchResults extends Component {
   constructor(props) {
     super(props);
 
@@ -51,7 +49,8 @@ class HomePage extends Component {
       });
   }
 
-  componentDidMount() { }
+  componentDidMount() {
+  }
 
   render() {
     const { movies, query } = this.state;
@@ -68,8 +67,6 @@ class HomePage extends Component {
           onClick={this.onClick}
           onKeyPress={this.onKeyPress}
         />
-        <NewsCarousel />
-        <HomeCards />
         <Movies movies={movies.filter(isSearched(query))} />
         <Footer />
       </div>
@@ -77,5 +74,5 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
+export default SearchResults;
 

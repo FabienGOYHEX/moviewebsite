@@ -1,6 +1,5 @@
  //Components/Movies.js
 
-import HomePage from '../HomePage'
 import React from 'react';
 import PropTypes from 'prop-types';
 import Movie from './Movie';

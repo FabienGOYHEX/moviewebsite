@@ -15,24 +15,21 @@ class HomeCards extends Component {
         return (
         /** Parent container which contain all the children cards
          + global title in h2 for all the components list */
-            <Row>
-            <Col>
-       
+            <div>       
             <h2>TITLE</h2> 
             <Row>
             <Col xs='6' md='4'>
             <HomeCardsVideo video={'https://www.youtube.com/embed/CTuGTLx2iEI'}/>
             </Col>
-            <Col  xs='6' md='4>
+            <Col  xs='6' md='4'>
             <HomeCardsImage ItemTitle={"Toto"} image={'https://via.placeholder.com/500x300'} alt={""}/>
-            <Col/>
+            </Col>
+            <Col xs='6' md='4'>
             <HomeCardsImage2 image={'https://via.placeholder.com/250x300'} alt={""} image2={'https://via.placeholder.com/250x300'} alt={""}/>
             </Col>
             </Row>
-
-            </Col>
-            </Row>
-            
+            </div>
+         
         )
     }
 }
