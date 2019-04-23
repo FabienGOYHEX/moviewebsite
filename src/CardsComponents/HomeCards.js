@@ -20,10 +20,10 @@ class HomeCards extends Component {
        
             <h2>TITLE</h2> 
             <Row>
-            <Col xs='6'>
+            <Col xs='6' md='4'>
             <HomeCardsVideo video={'https://www.youtube.com/embed/CTuGTLx2iEI'}/>
             </Col>
-            <Col  xs='6'>
+            <Col  xs='6' md='4>
             <HomeCardsImage ItemTitle={"Toto"} image={'https://via.placeholder.com/500x300'} alt={""}/>
             <Col/>
             <HomeCardsImage2 image={'https://via.placeholder.com/250x300'} alt={""} image2={'https://via.placeholder.com/250x300'} alt={""}/>
