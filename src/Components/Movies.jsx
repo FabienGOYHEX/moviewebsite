@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Movie from './Movie';
 
 const Movies = props => (
-    <ul className="movies" style={{display:'flex', flexWrap:'wrap', justifyContent:'space-between', listStyleType:'none'}}>
+    <ul className="movies" style={{display:'flex', flexWrap:'wrap', justifyContent:'space-around', listStyleType:'none'}}>
       {props.movies.map(movie => (
         <li key={movie.id}>
              <Movie {...movie}/>

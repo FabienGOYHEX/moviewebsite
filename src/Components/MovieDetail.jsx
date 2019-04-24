@@ -2,8 +2,6 @@
 
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import ReactPlayer from 'react-player';
-
 
 class MovieDetail extends Component {
 
