@@ -24,13 +24,7 @@ class Footer extends Component {
                <a href="https://pinterest.com" target = "_blank" rel="noopener noreferrer"> <i class="fab fa-pinterest-square fa-3x"></i></a>
                </Col>               
             </Row>
-            <Row>
-                <Col>
-               <a href="#">Movies </a>
-               <a href="#">Series </a>
-               </Col>
-            </Row>
-            
+                        
                <a href="#"> <i class="fas fa-arrow-alt-circle-up fa-3x"></i></a>
              
 
