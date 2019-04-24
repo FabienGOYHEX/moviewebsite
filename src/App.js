@@ -15,7 +15,8 @@ class App extends Component {
 
     this.state = {
       movies: [],
-      query: ""
+      query: "",
+      noData: false
     };
 
     this.onInput = this.onInput.bind(this);
@@ -58,9 +59,14 @@ class App extends Component {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        this.setState({
-          movies: data.results
-        });
+        if (data.results.length === 0) {
+          this.setState({ noData: true })
+        } else {
+          this.setState({
+            movies: data.results,
+            noData: false
+          });
+        }
       });
   }
 
@@ -89,6 +95,11 @@ class App extends Component {
           onClick={this.onClick}
           onKeyPress={this.onKeyPress}
         />
+        <div>
+            {this.state.noData ? 
+            
+            <p style={{textAlign: 'center', fontWeight: 'bold'}}>Sorry! <img src='https://image.flaticon.com/icons/svg/187/187150.svg' alt='So sad' width="30" height="30"/> No Results Found</p> : null }
+        </div>
         <Movies movies={movies.filter(isSearched(query))} />
         <Footer />
       </div>
