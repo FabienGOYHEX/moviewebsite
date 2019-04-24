@@ -11,7 +11,7 @@ class MovieDetail extends Component {
     return (
       <div>
         <Modal isOpen={this.props.isOpen} onClosed={this.props.onClosed} className={this.props.className}>
-          <ModalHeader>{this.props.original_title}</ModalHeader>
+          <ModalHeader>{this.props.title}</ModalHeader>
           <p>Release date: {this.props.release_date}</p>
           <ModalBody>
           <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${this.props.backdrop_path}`} alt=''/>

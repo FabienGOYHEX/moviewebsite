@@ -33,7 +33,7 @@ class Movie extends Component {
     render() {
 console.log(this.props)
         return (
-            <div className="movie">
+            <div style={{width:'300px', height:'650px'}}className="movie">
                 <Card>
                     <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${this.props.poster_path}`} alt=""/>
                     <CardBody>
