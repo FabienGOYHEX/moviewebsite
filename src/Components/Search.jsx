@@ -6,7 +6,7 @@
 
 const Search = props => (
     <Container>
-    <h1 style={{textAlign:'center'}}>Welcome to the "Movie Central" search engine:</h1>
+    <h1 style={{textAlign:'center'}}>Your movie search engine:</h1>
     <Form className="search" style={{padding:'50px', display:'flex'}}>
     <Input onKeyPress={props.onKeyPress} placeholder="Search for a movie..." autoFocus required className="mr-auto" type="search" value={props.query}  onInput={event => props.onInput(event.target.value)}/>
     <Button onClick={props.onClick}>Search</Button>

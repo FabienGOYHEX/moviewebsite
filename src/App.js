@@ -6,7 +6,6 @@ import React, { Component } from "react";
 import Movies from "./Components/Movies";
 import Search from "./Components/Search";
 import Footer from "./Footer";
-import PrimaryNavBar from "./PrimaryNavbar";
 
 const API_KEY = "81cccefa5d8106ac2032d82235c675bc";
 
@@ -75,8 +74,14 @@ class App extends Component {
       !query || item.title.toLowerCase().includes(query.toLowerCase());
 
     return (
-      <div className="app">
-        <PrimaryNavBar />
+      <div>
+        <div className="logo">
+          <img
+            src={require("./Logo.png")}
+            alt="Movie Central logo"
+            style={{ width: 175, height: 175 }}
+          />
+        </div>
         <Search
           query={query}
           onInput={this.onInput}
