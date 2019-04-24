@@ -1,12 +1,16 @@
 import React, { Component } from "react";
-import Movies from "./Components/Movies";
-import Search from "./Components/Search";
-import Footer from "./Footer";
-import PrimaryNavBar from "./PrimaryNavbar";
+import Axios from "axios";
+
 
 const API_KEY = "81cccefa5d8106ac2032d82235c675bc";
 
-class SearchResults extends Component {
+export default function SearchResultsPage({match}){
+  const {query} = match.params;
+  return console.log((query.split("").filter(x =>
+  x >= 3 ))) 
+}
+
+/*class SearchResults extends Component {
   constructor(props) {
     super(props);
 
@@ -74,5 +78,5 @@ class SearchResults extends Component {
   }
 }
 
-export default SearchResults;
+export default SearchResults;*/
 

@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import HomePage from "./HomePage";
-import SearchResults from "./SearchResults";
+import NewHomePage from "./NewHomePage";
 
 function AppRouter() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/Search-results" component={SearchResults} />
+        <Route exact path="/" component={NewHomePage} />
+        <Route exact path="/movies/search/:query" component={( { match }) => <div>{match.params.query}</div>} />
+        <Route exact path='/movies/:id' component={( { match }) => <div>{match.params.id}</div>} />
       </Switch>
     </Router>
   );

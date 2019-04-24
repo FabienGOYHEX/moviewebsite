@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Movies from "./Components/Movies";
-import Search from "./Components/Search";
+import Search from "./Components/Searchbis";
 import Footer from "./Footer";
 import PrimaryNavBar from "./PrimaryNavbar";
 import NewsCarousel from './NewsCarousel';
