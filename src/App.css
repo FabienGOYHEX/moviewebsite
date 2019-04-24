@@ -23,3 +23,8 @@
     justify-content: center;
     margin: 35px;
   }
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }

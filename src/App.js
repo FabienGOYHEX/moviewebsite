@@ -97,8 +97,8 @@ class App extends Component {
         />
         <div>
             {this.state.noData ? 
-            
-            <p style={{textAlign: 'center', fontWeight: 'bold'}}>Sorry! <img src='https://image.flaticon.com/icons/svg/187/187150.svg' alt='So sad' width="30" height="30"/> No Results Found</p> : null }
+            <p style={{textAlign: 'center', fontWeight: 'bold'}}>Sorry! <img src='https://image.flaticon.com/icons/svg/187/187150.svg' alt='So sad' width="30" height="30"/> No Results Found</p> 
+                               : null }
         </div>
         <Movies movies={movies.filter(isSearched(query))} />
         <Footer />
