@@ -82,14 +82,14 @@ class App extends Component {
     return (
       <div>
       <div className='header'>
-        <h1 style={{ textAlign: "center", fontSize:25 }}>Your movie search engine:</h1>
-        <div className="logo">
-          <img
-            src={require("./Logo.png")}
-            alt="Movie Central logo"
-            style={{ width: 175, height: 175, marginTop:75 }}
-          />
-        </div>
+      <div className="logo">
+        <img
+          src={require("./Logo.png")}
+          alt="Movie Central logo"
+          style={{ width: 175, height: 175 }}
+        />
+      </div>
+        <h1 style={{ textAlign: "center", fontSize:30, margin:40 }}>Your movie search engine:</h1>
 
         <Search
           query={query}

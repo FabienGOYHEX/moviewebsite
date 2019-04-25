@@ -24,6 +24,7 @@ class Footer extends Component {
                 <p>Website created by <b>Sarah, Fabien, Jean-Maxime and Vanessa</b>.</p>
                 </Col>               
             </Row>            
+            <a href="#"> <i class="fas fa-arrow-alt-circle-up fa-3x"></i></a>
 
             </footer> 
         );
