@@ -7,6 +7,14 @@ import ReactPlayer from 'react-player';
 
 class MovieDetail extends Component {
 
+  hasBackDropImage = () => {
+    if(this.props.backdrop_path === null || this.props.backdrop_path === '') {
+      return <img src={'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png'} alt=''/>
+    } else {
+      return <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${this.props.backdrop_path}`} alt=''/>
+    }
+  }
+
   render() {
     return (
       <div>
@@ -14,7 +22,7 @@ class MovieDetail extends Component {
           <ModalHeader>{this.props.title}</ModalHeader>
           <p>Release date: {this.props.release_date}</p>
           <ModalBody>
-          <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${this.props.backdrop_path}`} alt=''/>
+          {this.hasBackDropImage()}
           <h3>Overview:</h3>
           <p>{this.props.overview}</p>
           <p>Average score: {this.props.vote_average}</p>

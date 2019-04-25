@@ -28,6 +28,14 @@ class Movie extends Component {
       handleModalClose = () => {
         this.setState({ isOpen: false });
       };
+      
+      hasPosterImage = () => {
+      if(this.props.poster_path === null || this.props.poster_path === '') {
+        return <img src={'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png'} alt=''/>
+      } else {
+        return <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${this.props.poster_path}`} alt=''/>
+      }
+    }
 
 
     render() {
@@ -35,7 +43,7 @@ console.log(this.props)
         return (
             <div style={{width:'300px', height:'650px'}}className="movie">
                 <Card>
-                    <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${this.props.poster_path}`} alt=""/>
+                    {this.hasPosterImage()}
                     <CardBody>
                         <CardTitle className="movie__title" style={{fontWeight:'bold'}}>{this.props.title}</CardTitle>
                         <CardSubtitle>Release date: {this.props.release_date}</CardSubtitle>

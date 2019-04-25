@@ -6,6 +6,7 @@ import React, { Component } from "react";
 import Movies from "./Components/Movies";
 import Search from "./Components/Search";
 import Footer from "./Footer";
+import MovieDetail from "./Components/MovieDetail";
 
 const API_KEY = "81cccefa5d8106ac2032d82235c675bc";
 
@@ -60,7 +61,9 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         if (data.results.length === 0) {
-          this.setState({ noData: true })
+          this.setState({
+             noData: true
+             })
         } else {
           this.setState({
             movies: data.results,
@@ -75,6 +78,7 @@ class App extends Component {
   }
 
   render() {
+
     const { movies, query } = this.state;
     const isSearched = query => item =>
       !query || item.title.toLowerCase().includes(query.toLowerCase());
@@ -94,11 +98,12 @@ class App extends Component {
           placeholder="Search for Movie Title …"
           onClick={this.onClick}
           onKeyPress={this.onKeyPress}
+          
         />
         <div>
-            {this.state.noData ? 
-            <p style={{textAlign: 'center', fontWeight: 'bold'}}>Sorry! <img src='https://image.flaticon.com/icons/svg/187/187150.svg' alt='So sad' width="30" height="30"/> No Results Found</p> 
-                               : null }
+            {this.state.noData 
+              ? <p style={{textAlign: 'center', fontWeight: 'bold'}}>Sorry! <img src='https://image.flaticon.com/icons/svg/187/187150.svg' alt='So sad' width="30" height="30"/> No Results Found</p> 
+              : null }
         </div>
         <Movies movies={movies.filter(isSearched(query))} />
         <Footer />
