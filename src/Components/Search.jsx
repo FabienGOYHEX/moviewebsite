@@ -2,17 +2,21 @@
 
  import React from 'react';
  import PropTypes from 'prop-types';
- import { Input, Form, Container, Button} from 'reactstrap';
+ import { Input, Form, Button} from 'reactstrap';
  import  "./Search.css"
+ import { Container } from 'reactstrap'
+ import Sticky from 'react-sticky-el';
+
 
 const Search = props => (
-    <div>
-    <h1 style={{textAlign:'center'}}>Your movie search engine:</h1>
-    <Form className="search sticky" style={{padding:'50px', display:'flex'}}>
-    <Input onKeyPress={props.onKeyPress} placeholder="Search for a movie..." autoFocus required className="mr-auto" type="search" value={props.query}  onInput={event => props.onInput(event.target.value)}/>
+    <Container style={{marginBottom:130}}>
+    <Sticky style={{display:'flex', justifyContent:'center'}}>
+    <Form className='sticky'>
+    <Input onKeyPress={props.onKeyPress} placeholder="Search for a movie..." autoFocus required type="search" value={props.query}  onInput={event => props.onInput(event.target.value)}/>
     <Button onClick={props.onClick}>Search</Button>
     </Form>
-    </div>
+    </Sticky>
+    </Container>
   );
   
   Search.propTypes = {

@@ -36,7 +36,7 @@ class App extends Component {
   }
 
   onKeyPress(e) {
-    if (e.key == "Enter") {
+    if (e.key === "Enter") {
       e.preventDefault();
       this.searchMovie(this.state.query);
     }
@@ -85,13 +85,16 @@ class App extends Component {
 
     return (
       <div>
-        <div className="logo">
-          <img
-            src={require("./Logo.png")}
-            alt="Movie Central logo"
-            style={{ width: 175, height: 175 }}
-          />
-        </div>
+      <div className='header'>
+      <div className="logo">
+        <img
+          src={require("./Logo.png")}
+          alt="Movie Central logo"
+          style={{ width: 175, height: 175 }}
+        />
+      </div>
+        <h1 style={{ textAlign: "center", fontSize:30, margin:40 }}>Your movie search engine:</h1>
+
         <Search
           query={query}
           onInput={this.onInput}
@@ -100,6 +103,7 @@ class App extends Component {
           onKeyPress={this.onKeyPress}
           
         />
+        </div>
         <div>
             {this.state.noData 
               ? <p style={{textAlign: 'center', fontWeight: 'bold'}}>Sorry! <img src='https://image.flaticon.com/icons/svg/187/187150.svg' alt='So sad' width="30" height="30"/> No Results Found</p> 

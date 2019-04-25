@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardText, Button, CardBody,
+import { Card, Button, CardBody,
     CardTitle, CardSubtitle } from 'reactstrap';
 import MovieDetail from './MovieDetail'
 
