@@ -9,7 +9,7 @@
 
 
 const Search = props => (
-    <Container style={{marginBottom:130, width:'40%'}}>
+    <Container style={{marginBottom:130, width:'42%'}}>
     <Sticky style={{display:'flex', justifyContent:'center'}}>
     <Form className='sticky'>
     <Input onKeyPress={props.onKeyPress} placeholder="Search for a movie..." autoFocus required type="search" value={props.query}  onInput={event => props.onInput(event.target.value)}/>
