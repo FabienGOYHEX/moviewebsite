@@ -31,7 +31,7 @@ class Movie extends Component {
       
       hasPosterImage = () => {
       if(this.props.poster_path === null || this.props.poster_path === '') {
-        return <img src={'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png'} alt=''/>
+        return <img src={'https://mhaia.org/wp-content/uploads/2016/06/MHAIA-no-image-available-bg.png'} alt=''/>
       } else {
         return <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${this.props.poster_path}`} alt=''/>
       }
