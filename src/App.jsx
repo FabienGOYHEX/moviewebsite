@@ -72,10 +72,6 @@ class App extends Component {
       });
   }
 
-  componentDidMount() {
-    // this.getPopularMovies();
-  }
-
   render() {
 
     const { movies, query } = this.state;
