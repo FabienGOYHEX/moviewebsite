@@ -6,7 +6,6 @@ import React, { Component } from "react";
 import Movies from "./Components/Movies";
 import Search from "./Components/Search";
 import Footer from "./Footer";
-import MovieDetail from "./Components/MovieDetail";
 
 const API_KEY = "81cccefa5d8106ac2032d82235c675bc";
 
@@ -55,12 +54,12 @@ class App extends Component {
   }
 
   searchMovie(query) {
-    const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=cfe422613b250f702980a3bbf9e90716`;
+    const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${API_KEY}`;
 
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        if (data.results.length === 0) {
+        if (query === '' || data.results.length === 0) {
           this.setState({
              noData: true
              })
