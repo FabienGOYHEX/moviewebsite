@@ -16,7 +16,8 @@ class App extends Component {
     this.state = {
       movies: [],
       query: "",
-      noData: false
+      noData: false,
+      showResults: true
     };
 
     this.onInput = this.onInput.bind(this);
@@ -61,12 +62,14 @@ class App extends Component {
       .then(data => {
         if (query === '' || data.results.length === 0) {
           this.setState({
-             noData: true
+             noData: true,
+             showResults: false
              })
         } else {
           this.setState({
             movies: data.results,
-            noData: false
+            noData: false,
+            showResults: true
           });
         }
       });
@@ -104,7 +107,9 @@ class App extends Component {
               ? <p style={{textAlign: 'center', fontWeight: 'bold'}}>Sorry! <img src='https://image.flaticon.com/icons/svg/187/187150.svg' alt='So sad' width="30" height="30"/> No Results Found</p> 
               : null }
         </div>
-        <Movies movies={movies.filter(isSearched(query))} />
+            {this.state.showResults
+            ? <Movies movies={movies.filter(isSearched(query))} />
+            : null }
         <Footer />
       </div>
     );
