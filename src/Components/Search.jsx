@@ -9,11 +9,11 @@
 
 
 const Search = props => (
-    <Container style={{marginBottom:130}}>
+    <Container style={{marginBottom:130, width:'40%'}}>
     <Sticky style={{display:'flex', justifyContent:'center'}}>
     <Form className='sticky'>
     <Input onKeyPress={props.onKeyPress} placeholder="Search for a movie..." autoFocus required type="search" value={props.query}  onInput={event => props.onInput(event.target.value)}/>
-    <Button onClick={props.onClick}>Search</Button>
+    <a onClick={props.onClick} style={{cursor: 'pointer'}}><img src='https://comps.canstockphoto.es/plano-se%C3%B1al-vidrio-lupa-aumentar-eps-vectorial_csp50819942.jpg' onClick={props.onClick}  width='38' height='38'/></a>
     </Form>
     </Sticky>
     </Container>
