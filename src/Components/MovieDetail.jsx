@@ -38,7 +38,6 @@ class MovieDetail extends Component {
          <p>Release date: {this.props.release_date}</p>
          <ModalBody>
          {this.hasBackDropImage()}
-         <h3>Movie ID:{this.props.id}</h3>
          <h3>Overview:</h3>
          <p>{this.props.overview}</p>
          <p>Average score: {this.props.vote_average}</p>

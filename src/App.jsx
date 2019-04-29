@@ -67,6 +67,10 @@ class App extends Component {
       });
   }
 
+  refreshPage () {
+    window.location.reload();
+  }
+
   render() {
 
     const { movies, query } = this.state;
@@ -77,10 +81,11 @@ class App extends Component {
       <div>
       <div className='header'>
       <div className="logo">
-        <img
+
+      <img onClick= { () => this.refreshPage()}
           src={require("./Logo.png")}
           alt="Movie Central logo"
-          style={{ width: 175, height: 175 }}
+          style={{ width: 175, height: 175, cursor:'pointer' }}
         />
       </div>
         <h1 style={{ textAlign: "center", fontSize:30, margin:40 }}>Your movie search engine:</h1>
