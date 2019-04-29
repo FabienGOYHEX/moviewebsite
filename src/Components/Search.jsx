@@ -5,17 +5,16 @@
  import React from 'react';
  import PropTypes from 'prop-types';
  import { Input, Form, Button} from 'reactstrap';
- import  "./Search.css"
  import { Container } from 'reactstrap'
  import Sticky from 'react-sticky-el';
 
 
 const Search = props => (
-    <Container style={{marginBottom:130, width:'42%'}}>
+    <Container style={{marginBottom:60, width:'50%'}}>
     <Sticky style={{display:'flex', justifyContent:'center'}}>
-    <Form className='sticky'>
-    <Input onKeyPress={props.onKeyPress} placeholder="Search for a movie..." autoFocus required type="search" value={props.query}  onInput={event => props.onInput(event.target.value)}/>
-    <a onClick={props.onClick} style={{cursor: 'pointer'}}><img src='https://comps.canstockphoto.es/plano-se%C3%B1al-vidrio-lupa-aumentar-eps-vectorial_csp50819942.jpg' onClick={props.onClick}  width='38' height='38'/></a>
+    <Form className='sticky' style={{zIndex: 100, display:'flex', position:'fixed'}}>
+    <Input onKeyPress={props.onKeyPress} placeholder="Search for a movie..." autoFocus required type="search" value={props.query}  onInput={event => props.onInput(event.target.value)} style={{fontSize:22}}/>
+    <a onClick={props.onClick} style={{cursor: 'pointer'}}><img src='https://comps.canstockphoto.es/plano-se%C3%B1al-vidrio-lupa-aumentar-eps-vectorial_csp50819942.jpg' onClick={props.onClick}  width='47' height='47'/></a>
     </Form>
     </Sticky>
     </Container>

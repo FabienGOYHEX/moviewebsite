@@ -16,6 +16,7 @@ const Movies = props => (
     </ul>
   );
   
+  
   Movies.propTypes = {
     movies: PropTypes.arrayOf(PropTypes.object)
   };

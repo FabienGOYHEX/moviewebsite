@@ -32,7 +32,7 @@ class MovieDetail extends Component {
   render() {
     return (
       <div>
-      <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={this.props.className}>
+      <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={this.props.className} style={{fontFamily: 'Muli, sans-serif'}}>
       <button type="button" class="close" aria-label="Close" style={{margin: '15px'}}><span aria-hidden="true" onClick={this.props.toggle}>×</span></button>
          <ModalHeader>{this.props.title}</ModalHeader>
          <p>Release date: {this.props.release_date}</p>

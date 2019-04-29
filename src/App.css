@@ -1,7 +1,16 @@
   footer{
     text-align: center;
-    background-color: rgba(158, 160, 160, 0.596);
+    background-color:#1b1715;
+    color: white;
     padding: 25px;
+    margin-top: -67px;
+    font-family: 'Muli', sans-serif;
+    height: 100%;
+
+  }
+
+  footer a {
+    color: #f7b300;
   }
 
   footer * {
@@ -13,23 +22,44 @@
   .logo{
     display: flex;
     justify-content: center;
-    margin: 10px;
+    margin: 25px;
   }
+
   .sticky {
     position: fixed;
     top: 10px!important;
     width: 100%;
-  }
-  .header{
-    background-color:rgb(238, 238, 238);
-    height: 400 px;
-    padding-bottom: 50px;
-    padding-top: 15px;
+    z-index: 100;
   }
 
-  .top{
-    display: flex;
-    width: 30px;
-    height: 30px;
-    margin: 0 auto;
-    }
+  .header{
+    padding-bottom: 50px;
+    padding-top: 175px;
+    background-image: url('moviecentral_cover.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 650px;
+    margin-bottom: 50px;
+    color:  white;
+    font-family: 'Muli', sans-serif;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  h1 {
+    font-size:30px!important;
+    color:#f7b300;
+  }
+
+.backTop {
+	display:none;
+	padding:20px;
+  font-size: 60px;
+  color: #f34821;
+	cursor:pointer;
+	position: fixed;
+	bottom:20px;
+  right:20px;
+  z-index: 1000;
+}

@@ -88,7 +88,7 @@ class App extends Component {
           style={{ width: 175, height: 175, cursor:'pointer' }}
         />
       </div>
-        <h1 style={{ textAlign: "center", fontSize:30, margin:40 }}>Your movie search engine:</h1>
+        <h1>Your movie search engine:</h1>
 
         <Search
           query={query}
@@ -98,16 +98,19 @@ class App extends Component {
           onKeyPress={this.onKeyPress}
           
         />
-        </div>
         <div>
-            {this.state.noData 
-              ? <p style={{textAlign: 'center', fontWeight: 'bold'}}>Sorry! <img src='https://image.flaticon.com/icons/svg/187/187150.svg' alt='So sad' width="30" height="30"/> No Results Found</p> 
-              : null }
+        {this.state.noData 
+          ? <p>Sorry! <img src='https://image.flaticon.com/icons/svg/187/187150.svg' alt='So sad' width="30" height="30"/> No Results Found</p> 
+          : null }
         </div>
+        </div>
+        
             {this.state.showResults
             ? <Movies movies={movies.filter(isSearched(query))} />
             : null }
-        <Footer />
+            
+            <Footer />
+
       </div>
     );
   }

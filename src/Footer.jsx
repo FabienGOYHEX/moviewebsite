@@ -12,19 +12,14 @@ class Footer extends Component {
             <footer >
             <Row>
                 <Col>
-                <a href="https://facebook.com" target = "_blank" rel="noopener noreferrer"> <i  class="fab fa-facebook-square fa-3x"></i></a>
-                <a href="https://twitter.com" target = "_blank" rel="noopener noreferrer"> <i class="fab fa-twitter-square fa-3x"></i></a>
-                <a href="https://github.com" target = "_blank" rel="noopener noreferrer"> <i class="fab fa-github-square fa-3x"></i></a>
-                <a href="https://pinterest.com" target = "_blank" rel="noopener noreferrer"> <i class="fab fa-pinterest-square fa-3x"></i></a>
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                <p>Website created by <b>Sarah, Fabien, Jean-Maxime and Vanessa</b>.</p>
+                <p>Website created by
+                <a href="https://github.com/srh1013" target = "_blank" rel="noopener noreferrer">Sarah</a>, 
+                <a href="https://github.com/FabienGOYHEX" target = "_blank" rel="noopener noreferrer">Fabien</a>, 
+                <a href="https://github.com/jmg64" target = "_blank" rel="noopener noreferrer">Jean-Maxime</a> and 
+                <a href="https://github.com/vanessacode" target = "_blank" rel="noopener noreferrer">Vanessa</a>
+                </p>
                 </Col>               
             </Row>            
-            <a href="#"> <i class="fas fa-arrow-alt-circle-up fa-3x"></i></a>
-
             </footer> 
         );
     }

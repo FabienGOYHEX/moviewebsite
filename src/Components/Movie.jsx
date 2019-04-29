@@ -42,8 +42,8 @@ class Movie extends Component {
 
     render() {
         return (
-            <div style={{width:'300px', height:'650px'}}className="movie">
-               <Card onClick={this.toggle} style={{cursor:'pointer'}}>
+            <div style={{width:'300px', height:'650px', margin:20 }}className="movie">
+               <Card onClick={this.toggle} style={{cursor:'pointer', fontFamily: 'Dosis, sans-serif'}}>
                    {this.hasPosterImage()}
                    <CardBody>
                        <CardTitle className="movie__title" style={{fontWeight:'bold'}}>{this.props.title}</CardTitle>
