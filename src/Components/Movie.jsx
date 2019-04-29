@@ -45,7 +45,7 @@ class Movie extends Component {
     render() {
 console.log(this.props)
         return (
-            <div style={{width:'300px', height:'650px'}}className="movie">
+            <div style={{width:'300px', height:'650px'}}className="movie" onClosed={this.handleModalClose}>
                 <Card onClick={this.HandleCardClick} style={{cursor:'pointer'}}>
                     {this.hasPosterImage()}
                     <CardBody>
@@ -54,6 +54,7 @@ console.log(this.props)
                         <Button color="primary" onClick={this.HandleCardClick}>Show More</Button>
                     </CardBody>
                 </Card>
+
                 <MovieDetail isOpen={this.state.isOpen} onClosed={this.handleModalClose} {...this.props} />
             </div>
         )
