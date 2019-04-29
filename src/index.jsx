@@ -1,6 +1,7 @@
-/** src/index.jsx
+/* src/index.jsx
  Parent component of App.jsx which send App.jsx content within the Html Id (Div) called "Root"
  */
+
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";

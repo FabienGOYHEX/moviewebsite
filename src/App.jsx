@@ -1,5 +1,5 @@
-/** src/App.js
- Parent component which imports all the website components
+/* src/App.jsx
+ Parent component which imports the main components of the website.
  */
 
 import React, { Component } from "react";
@@ -25,16 +25,19 @@ class App extends Component {
     this.onKeyPress = this.onKeyPress.bind(this);
   }
 
+  // It is the function in charge of saving the value that the user introduces in the input, to be able to do the search in the API.
   onInput(query) {
     this.setState({
       query
     });
   }
 
+  // The function that allows us to search when we click on the button of the form.
   onClick() {
     this.searchMovie(this.state.query);
   }
 
+  // The function that allows us to search when we click on the enter key.
   onKeyPress(e) {
     if (e.key === "Enter") {
       e.preventDefault();
@@ -42,18 +45,7 @@ class App extends Component {
     }
   }
 
-  getPopularMovies() {
-    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
-
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          movies: data.results
-        });
-      });
-  }
-
+  // Function in charge of making the API request, passing to the url the text introduced by the user and the key.
   searchMovie(query) {
     const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${API_KEY}`;
 

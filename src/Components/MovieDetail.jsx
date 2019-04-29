@@ -1,10 +1,13 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
+/* Components/MovieDetail.jsx
+This component corresponds to the "modal" of each movie.
+*/
 
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class MovieDetail extends Component {
 
+  // It is the function responsible for inserting a still image in the "modal" when the API does not have an image for a particular  movie.
   hasBackDropImage = () => {
     if(this.props.backdrop_path === null || this.props.backdrop_path === '') {
       return <img src={'https://mhaia.org/wp-content/uploads/2016/06/MHAIA-no-image-available-bg.png'} alt=''/>

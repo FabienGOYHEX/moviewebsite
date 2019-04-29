@@ -1,10 +1,9 @@
-/** src/Footer.js/
-Child component of App.js which contains the social Networks, the top button and the navbar items
+/** src/Footer.jsx/
+Child component of App.js which contains the creators of the site and the top button
  */
 import React, { Component } from 'react';
 import  "./App.css"
 import {Row,Col} from 'reactstrap'
-//import Logo from "./Logo.png";
 
 class Footer extends Component {
 

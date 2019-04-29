@@ -1,4 +1,6 @@
- // Components/Search.jsx
+ /* Components/Search.jsx
+ This component contains a sticky form with a button and a search bar that collects the value entered by the user.
+ */
 
  import React from 'react';
  import PropTypes from 'prop-types';

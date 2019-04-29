@@ -1,5 +1,6 @@
- //Components/Movies.js
-
+ /* Components/Movies.jsx
+ This component corresponds to all movie cards that appears in the search results.
+ */
 
 import React from 'react';
 import PropTypes from 'prop-types';
