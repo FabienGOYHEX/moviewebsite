@@ -4,7 +4,6 @@ This component corresponds to the "modal" of each movie.
 
 import React, { Component } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import OutsideClickHandler from "react-outside-click-handler";
 
 class MovieDetail extends Component {
   // It is the function responsible for inserting a still image in the "modal" when the API does not have an image for a particular  movie.*/
@@ -29,42 +28,27 @@ class MovieDetail extends Component {
       );
     }
   };
-
+  
   render() {
     return (
       <div>
-        <Modal isOpen={this.props.isOpen} className={this.props.className}>
-          <OutsideClickHandler
-            onOutsideClick={() => {
-              alert("You clicked outside of this component!!!");
-            }}
-          >
-            <ModalHeader>
-              {this.props.title}
-              <img
-                style={{ width: 38, height: 38, cursor: "pointer" }}
-                onClick={this.props.onClosed}
-                src="https://image.flaticon.com/icons/png/128/0/39.png"
-                alt="close modal window"
-              />
-            </ModalHeader>
-            <p>Release date: {this.props.release_date}</p>
-            <ModalBody>
-              {this.hasBackDropImage()}
-              <h3>Movie ID:{this.props.id}</h3>
-              <h3>Overview:</h3>
-              <p>{this.props.overview}</p>
-              <p>Average score: {this.props.vote_average}</p>
-              <p>Votes: {this.props.vote_count}</p>
-            </ModalBody>
-            <ModalFooter>
-              <Button color="primary" onClick={this.props.onClosed}>
-                Close
-              </Button>
-            </ModalFooter>
-          </OutsideClickHandler>
-        </Modal>
-      </div>
+      <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={this.props.className}>
+      <button type="button" class="close" aria-label="Close" style={{margin: '15px'}}><span aria-hidden="true" onClick={this.props.toggle}>×</span></button>
+         <ModalHeader>{this.props.title}</ModalHeader>
+         <p>Release date: {this.props.release_date}</p>
+         <ModalBody>
+         {this.hasBackDropImage()}
+         <h3>Movie ID:{this.props.id}</h3>
+         <h3>Overview:</h3>
+         <p>{this.props.overview}</p>
+         <p>Average score: {this.props.vote_average}</p>
+         <p>Votes: {this.props.vote_count}</p>
+         </ModalBody>
+         <ModalFooter>
+           <Button color="primary" onClick={this.props.toggle} >Close</Button>
+         </ModalFooter>
+       </Modal>
+     </div>
     );
   }
 }
