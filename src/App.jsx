@@ -51,7 +51,7 @@ class App extends Component {
   searchMovie(query) {
     const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${API_KEY}`;
 
-    (url)
+    fetch(url)
       .then(response => response.json())
       .then(data => {
         if (query === '' || data.results.length === 0) {
