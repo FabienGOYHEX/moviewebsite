@@ -20,15 +20,15 @@ cd my-app
 npm start
 
 
-#Movie Central Search Engine
-##API
+**#Movie Central Search Engine**
+**##API*
 Movie Cental Search Engine is a responsive React app that use 
 [MovieDB] (https://www.themoviedb.org/documentation/api "link to The Movie Database") IMDB API to load data. This app helps you to search movies, filter and display overview cards.
 
-#DEMO
+**#DEMO**
 CREER URL GITHUB PAGES Moviecentral
 
-#TOOLS
+**##TOOLS**
 Key tools used in this React project are:
 
 ##Tool: ReactStrap 
