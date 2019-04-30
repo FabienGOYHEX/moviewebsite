@@ -14,7 +14,7 @@ class MovieDetail extends Component {
           src={
             "https://mhaia.org/wp-content/uploads/2016/06/MHAIA-no-image-available-bg.png"
           }
-          alt=""
+          alt="no image available"
         />
       );
     } else {
@@ -33,18 +33,20 @@ class MovieDetail extends Component {
     return (
       <div>
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={this.props.className} style={{fontFamily: 'Muli, sans-serif'}}>
-      <button type="button" class="close" aria-label="Close" style={{margin: '15px'}}><span aria-hidden="true" onClick={this.props.toggle}>×</span></button>
-         <ModalHeader>{this.props.title}</ModalHeader>
-         <p>Release date: {this.props.release_date}</p>
+         <div>
+         <div style={{display: "flex", justifyContent:'space-between', backgroundColor:"#00cfea78"}}> <h3 style={{ margin: '15px', fontWeight: 'bold'}}>{this.props.title}</h3>
+         <button type="button" class="close" aria-label="Close" style={{margin: '15px'}}><span aria-hidden="true" onClick={this.props.toggle}>×</span></button></div>
+           </div>
+           <p style={{marginLeft: '15px', fontStyle: 'italic'}}>Release date: {this.props.release_date}</p>
          <ModalBody>
-         {this.hasBackDropImage()}
+         <p style={{textAlign:'center'}}> {this.hasBackDropImage()}</p>
          <h3>Overview:</h3>
-         <p>{this.props.overview}</p>
+         <p >{this.props.overview}</p>
          <p>Average score: {this.props.vote_average}</p>
          <p>Votes: {this.props.vote_count}</p>
          </ModalBody>
          <ModalFooter>
-           <Button color="primary" onClick={this.props.toggle} >Close</Button>
+           <Button style={{backgroundColor:"#0072ce"}} onClick={this.props.toggle} >Close</Button>
          </ModalFooter>
        </Modal>
      </div>
