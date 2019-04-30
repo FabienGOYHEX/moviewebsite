@@ -1,3 +1,9 @@
+![picture](src/Logo.png)
+
+
+**#Authors**:
+Sarah Elyafi - Vanessa Salvador
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 #REACT 
@@ -12,9 +18,6 @@ React toolchains:
 npx create-react-app my-app
 cd my-app
 npm start
-
-**#Authors**:
-Sarah Elyafi - Vanessa Salvador
 
 
 #Movie Central Search Engine
