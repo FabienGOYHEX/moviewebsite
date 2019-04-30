@@ -5,7 +5,19 @@ This component corresponds to the "modal" of each movie.
 import React, { Component } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
+const API_KEY = "81cccefa5d8106ac2032d82235c675bc";
+
 class MovieDetail extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+        trailer: [],
+        movieId: 329996
+    }
+
+    this.changeApproval = this.changeApproval.bind(this); 
+  };
+
   // It is the function responsible for inserting a still image in the "modal" when the API does not have an image for a particular  movie.*/
   hasBackDropImage = () => {
     if (this.props.backdrop_path === null || this.props.backdrop_path === "") {
@@ -28,6 +40,29 @@ class MovieDetail extends Component {
       );
     }
   };
+
+
+
+
+
+  /*onClickTrailer() {
+    this.fetchTrailer(this.state.movieId);
+  }*/
+  changeApproval(){
+    this.fetchTrailer()
+  }
+
+    fetchTrailer() {
+     const test = `http://api.themoviedb.org/3/movie/${this.state.movieId}/videos?api_key=${API_KEY}`;
+     fetch(test)
+      .then(response => response.json())
+      .then(trailerData => {
+          this.setState({
+            trailer: trailerData.results
+          });
+        })
+      }
+
   
   render() {
     return (
@@ -39,6 +74,7 @@ class MovieDetail extends Component {
          <ModalBody>
          {this.hasBackDropImage()}
          <h3>Movie ID:{this.props.id}</h3>
+         <Button onClick={this.changeApproval()}>Trailer</Button> 
          <h3>Overview:</h3>
          <p>{this.props.overview}</p>
          <p>Average score: {this.props.vote_average}</p>
@@ -52,5 +88,6 @@ class MovieDetail extends Component {
     );
   }
 }
+
 
 export default MovieDetail;

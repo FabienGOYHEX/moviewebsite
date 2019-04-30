@@ -45,6 +45,10 @@ class App extends Component {
     }
   }
 
+  refreshPage () {
+    window.location.reload()
+  }
+
   // Function in charge of making the API request, passing to the url the text introduced by the user and the key.
   searchMovie(query) {
     const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${API_KEY}`;
@@ -77,7 +81,7 @@ class App extends Component {
       <div>
       <div className='header'>
       <div className="logo">
-        <img
+        <img onClick={() => this.refreshPage()}
           src={require("./Logo.png")}
           alt="Movie Central logo"
           style={{ width: 175, height: 175 }}
@@ -100,8 +104,8 @@ class App extends Component {
               : null }
         </div>
             {this.state.showResults
-            ? <Movies movies={movies.filter(isSearched(query))} />
-            : null }
+              ? <Movies movies={movies.filter(isSearched(query))} />
+              : null }
         <Footer />
       </div>
     );

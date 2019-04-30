@@ -40,19 +40,23 @@ class Movie extends Component {
       }
     }
 
+
     render() {
-        return (
+        return (               
+
             <div style={{width:'300px', height:'650px'}}className="movie">
                <Card onClick={this.toggle} style={{cursor:'pointer'}}>
                    {this.hasPosterImage()}
                    <CardBody>
                        <CardTitle className="movie__title" style={{fontWeight:'bold'}}>{this.props.title}</CardTitle>
                        <CardSubtitle>Release date: {this.props.release_date}</CardSubtitle>
-                       <Button color="primary" toggle={this.toggle}  >Show More
+                       <Button color="primary" toggle={this.toggle}   >Show More
                        </Button>
+                       
                    </CardBody>
                </Card>
                <MovieDetail isOpen={this.state.isOpen} toggle={this.toggle} {...this.props} />
+               
            </div>
         )
     }
