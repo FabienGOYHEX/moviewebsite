@@ -100,14 +100,14 @@ class App extends Component {
           
         />
 
-        <div>
+        
         {this.state.noData 
           ? <p>Sorry! <img src='https://image.flaticon.com/icons/svg/187/187150.svg' alt='So sad' width="30" height="30"/> No Results Found</p> 
           : null }
-        </div>
+
         </div>
       
-            <h1 style={{marginBottom:50}}>Your movie search:</h1>
+            <h1 style={{marginBottom:40}}>Your movie search:</h1>
 
             {this.state.showResults
               ? <Movies movies={movies.filter(isSearched(query))} />
@@ -117,21 +117,21 @@ class App extends Component {
             <Container style={{marginBottom:50 }}>
               <Row>
               <Col xs={12} sm={4} style={{textAlign:'center'}}>
-              <img src={require("./search_icon.jpg")} style={{width:150, height:150, marginBottom: 20}}/>
-              <h4>Search</h4>
-              <p>nfjksdfjkd fhjkfsd jkfsd jf sfsd.</p>
+              <img src={require("./search_icon.png")} style={{width:150, height:150, marginBottom: 20}}/>
+              <h4 style={{fontFamily: 'Gloria Hallelujah, cursive'}}>Search:</h4>
+              <p style={{fontSize:18, fontFamily: 'Muli, sans-serif'}}>Find your favorite movie list.</p>
               </Col>
               
               <Col xs={12} sm={4} style={{textAlign:'center'}}>
-              <img src={require("./features_icon.jpg")} style={{width:150, height:150, marginBottom: 20}}/>
-              <h4>Filter</h4>
-              <p>nfjksdfjkd fhjkfsd jkfsd jf sfsd.</p>
+              <img src={require("./filter_icon.png")} style={{width:150, height:150, marginBottom: 20}}/>
+              <h4 style={{fontFamily: 'Gloria Hallelujah, cursive'}}>Filter:</h4>
+              <p style={{fontSize:18, fontFamily: 'Muli, sans-serif'}}>Show your specifics movie title.</p>
               </Col>
               
               <Col xs={12} sm={4} style={{textAlign:'center'}}>
-              <img src={require("./target_icon.jpg")} style={{width:150, height:150, marginBottom: 20}}/>
-              <h4>Find</h4>
-              <p>nfjksdfjkd fhjkfsd jkfsd jf sfsd.</p>
+              <img src={require("./target_icon.png")} style={{width:150, height:150, marginBottom: 20}}/>
+              <h4 style={{fontFamily: 'Gloria Hallelujah, cursive'}}>Target:</h4>
+              <p style={{fontSize:18, fontFamily: 'Muli, sans-serif'}}>In one clic, easy and simple use.</p>
               </Col>
               </Row>
             </Container>

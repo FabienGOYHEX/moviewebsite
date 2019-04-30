@@ -41,9 +41,9 @@ class MovieDetail extends Component {
            <Row style={{marginTop:20}}>
            <Col md={12} lg={5} style={{textAlign:'center', marginBottom:20}}> {this.hasBackDropImage()}</Col>
            <Col md={12} lg={5}>
-           <h3>Overview:</h3>
-           <p><i>Release date: {this.props.release_date}</i></p>
+           <h4>Overview:</h4>
            <p style={{textAlign:'justify'}}>{this.props.overview}</p>
+           <p><i>Release date: {this.props.release_date}</i></p>
            <div style={{display:'flex', justifyContent:'space-around', marginTop:40, textAlign:'center'}}>
            <div>
            <img src='https://png.pngtree.com/svg/20170619/f30264d79c.png' width='100px' height='100px' style={{marginBottom:15}} alt='score' />

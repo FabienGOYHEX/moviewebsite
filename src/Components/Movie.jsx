@@ -43,12 +43,12 @@ class Movie extends Component {
     render() {
         return (
             <div style={{width:'300px', height:'650px', margin:5 }}className="movie">
-               <Card onClick={this.toggle} style={{cursor:'pointer', fontFamily: 'Dosis, sans-serif'}}>
+               <Card onClick={this.toggle} style={{cursor:'pointer', fontFamily: 'Muli, sans-serif'}}>
                    {this.hasPosterImage()}
                    <CardBody>
-                       <CardTitle className="movie__title" style={{fontWeight:'bold'}}>{this.props.title}</CardTitle>
-                       <CardSubtitle>Release date: {this.props.release_date}</CardSubtitle>
-                       <Button color="primary" toggle={this.toggle}  >Show More
+                       <CardTitle className="movie__title" style={{fontWeight:'bold', fontSize:18}}>{this.props.title}</CardTitle>
+                       <CardSubtitle><i>Release date: {this.props.release_date}</i></CardSubtitle>
+                       <Button color="primary" style={{marginTop:10, backgroundColor:"#0072ce"}} toggle={this.toggle}  >Show More
                        </Button>
                    </CardBody>
                </Card>
