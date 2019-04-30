@@ -6,6 +6,8 @@ import React, { Component } from "react";
 import Movies from "./Components/Movies";
 import Search from "./Components/Search";
 import Footer from "./Footer";
+import './App.css'
+import { Row, Col, Container } from 'reactstrap';
 
 const API_KEY = "81cccefa5d8106ac2032d82235c675bc";
 
@@ -88,9 +90,8 @@ class App extends Component {
           style={{ width: 175, height: 175, cursor:'pointer' }}
         />
       </div>
-        <h1>Your movie search engine:</h1>
 
-        <Search
+      <Search
           query={query}
           onInput={this.onInput}
           placeholder="Search for Movie Title …"
@@ -98,6 +99,7 @@ class App extends Component {
           onKeyPress={this.onKeyPress}
           
         />
+
         <div>
         {this.state.noData 
           ? <p>Sorry! <img src='https://image.flaticon.com/icons/svg/187/187150.svg' alt='So sad' width="30" height="30"/> No Results Found</p> 
@@ -109,6 +111,30 @@ class App extends Component {
             ? <Movies movies={movies.filter(isSearched(query))} />
             : null }
             
+            <h1>Your movie search engine:</h1>
+            
+            <Container style={{marginTop:50, marginBottom:50 }}>
+              <Row>
+              <Col xs={12} sm={4} style={{textAlign:'center'}}>
+              <img src='https://cdn.bestvpn.com/storage/images/bestvpn/2018/07/search-results-150x150-content_image-default.png' style={{width:150, height:150}}/>
+              <h4>Search</h4>
+              <p>nfjksdfjkd fhjkfsd jkfsd jf sfsd.</p>
+              </Col>
+              
+              <Col xs={12} sm={4} style={{textAlign:'center'}}>
+              <img src='https://cdn.bestvpn.com/storage/images/bestvpn/2018/07/search-results-150x150-content_image-default.png' style={{width:150, height:150}}/>
+              <h4>Filter</h4>
+              <p>nfjksdfjkd fhjkfsd jkfsd jf sfsd.</p>
+              </Col>
+              
+              <Col xs={12} sm={4} style={{textAlign:'center'}}>
+              <img src='https://cdn.bestvpn.com/storage/images/bestvpn/2018/07/search-results-150x150-content_image-default.png' style={{width:150, height:150}}/>
+              <h4>Find</h4>
+              <p>nfjksdfjkd fhjkfsd jkfsd jf sfsd.</p>
+              </Col>
+              </Row>
+            </Container>
+
             <Footer />
 
       </div>
