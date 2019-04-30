@@ -6,7 +6,7 @@ Sarah Elyafi - Vanessa Salvador
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#REACT 
+**#REACT**
 React toolchains:
     • Scaling to many files and components.
     • Using third-party libraries from npm.
@@ -21,7 +21,7 @@ npm start
 
 
 **#Movie Central Search Engine**
-**##API*
+*##API*
 Movie Cental Search Engine is a responsive React app that use 
 [MovieDB] (https://www.themoviedb.org/documentation/api "link to The Movie Database") IMDB API to load data. This app helps you to search movies, filter and display overview cards.
 
