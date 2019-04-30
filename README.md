@@ -27,16 +27,13 @@ CREER URL GITHUB PAGES Moviecentral
 
 #TOOLS
 Key tools used in this React project are:
--Tool: ReactStrap
--Description: Provides prebuilt Bootstrap 4 components that allow a great deal of flexibility and prebuilt validation. This allows us to quickly build beautiful forms that are guaranteed to impress and provide an intuitive user experience. 
+--Tool: ReactStrap --Description: Provides prebuilt Bootstrap 4 components that allow a great deal of flexibility and prebuilt validation. This allows us to quickly build beautiful forms that are guaranteed to impress and provide an intuitive user experience. 
 
--Tool: Bootstrap
--Description: Build responsive, mobile-first projects on the web with the world's most popular front-end component library
+--Tool: Bootstrap --Description: Build responsive, mobile-first projects on the web with the world's most popular front-end component library
 
--Tool:Github
--Description: Code hosting platform for collaboration and version control. GitHub lets you (and others) work together on projects. ... Git (the version control software GitHub is built on)
+--Tool:Github --Description: Code hosting platform for collaboration and version control. GitHub lets you (and others) work together on projects. ... Git (the version control software GitHub is built on)
 
-/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 Thanks for your feedback and don't hesitate in forking our project!
 
 **#MovieCentral Team**
