@@ -42,7 +42,7 @@ class Movie extends Component {
 
     render() {
         return (
-            <div style={{width:'300px', height:'650px', margin:20 }}className="movie">
+            <div style={{width:'300px', height:'650px', margin:5 }}className="movie">
                <Card onClick={this.toggle} style={{cursor:'pointer', fontFamily: 'Dosis, sans-serif'}}>
                    {this.hasPosterImage()}
                    <CardBody>

@@ -3,7 +3,7 @@ This component corresponds to the "modal" of each movie.
 */
 
 import React, { Component } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col } from "reactstrap";
 
 class MovieDetail extends Component {
   // It is the function responsible for inserting a still image in the "modal" when the API does not have an image for a particular  movie.*/
@@ -32,22 +32,35 @@ class MovieDetail extends Component {
   render() {
     return (
       <div>
-      <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={this.props.className} style={{fontFamily: 'Muli, sans-serif'}}>
+      <Modal isOpen={this.props.isOpen} toggle={this.props.toggle}  size="xl" className={this.props.className} style={{fontFamily: 'Muli, sans-serif', fontSize:18}}>
          <div>
-         <div style={{display: "flex", justifyContent:'space-between', backgroundColor:"#00cfea78"}}> <h3 style={{ margin: '15px', fontWeight: 'bold'}}>{this.props.title}</h3>
+         <div style={{display: "flex", justifyContent:'space-between', backgroundColor:"#eff0f1", height:71}}> <h3 style={{ margin: '15px', fontWeight: 'bold'}}>{this.props.title}</h3>
          <button type="button" class="close" aria-label="Close" style={{margin: '15px'}}><span aria-hidden="true" onClick={this.props.toggle}>×</span></button></div>
            </div>
-           <p style={{marginLeft: '15px', fontStyle: 'italic'}}>Release date: {this.props.release_date}</p>
-         <ModalBody>
-         <p style={{textAlign:'center'}}> {this.hasBackDropImage()}</p>
-         <h3>Overview:</h3>
-         <p >{this.props.overview}</p>
-         <p>Average score: {this.props.vote_average}</p>
-         <p>Votes: {this.props.vote_count}</p>
+           <ModalBody>
+           <Row style={{marginTop:20}}>
+           <Col md={12} lg={5} style={{textAlign:'center', marginBottom:20}}> {this.hasBackDropImage()}</Col>
+           <Col md={12} lg={5}>
+           <h3>Overview:</h3>
+           <p><i>Release date: {this.props.release_date}</i></p>
+           <p style={{textAlign:'justify'}}>{this.props.overview}</p>
+           <div style={{display:'flex', justifyContent:'space-around', marginTop:40, textAlign:'center'}}>
+           <div>
+           <img src='https://png.pngtree.com/svg/20170619/f30264d79c.png' width='100px' height='100px' style={{marginBottom:15}} alt='score' />
+           <p>Average score: {this.props.vote_average}</p>
+           </div>
+           <div>
+           <img src='https://cdn4.iconfinder.com/data/icons/seo-and-development-18/32/seo-computer-development-icon-18-512.png' width='100px' height='100px' style={{marginBottom:15}} alt='score' />
+           <p>Votes: {this.props.vote_count}</p>
+           </div>
+           </div>
+         </Col>
+         </Row>
          </ModalBody>
-         <ModalFooter>
+         <ModalFooter style={{backgroundColor:"#eff0f1"}}>
            <Button style={{backgroundColor:"#0072ce"}} onClick={this.props.toggle} >Close</Button>
          </ModalFooter>
+         
        </Modal>
      </div>
     );

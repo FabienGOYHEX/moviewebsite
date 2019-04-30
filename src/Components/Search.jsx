@@ -13,7 +13,7 @@
    <Sticky style={{display:'flex', justifyContent:'center'}}>
    <Form className='sticky' style={{zIndex: 100, display:'flex', position:'fixed'}}>
    <Input onKeyPress={props.onKeyPress} placeholder="Search for a movie..." autoFocus required type="search" value={props.query}  onInput={event => props.onInput(event.target.value)} style={{fontSize:22}}/>
-   <a onClick={props.onClick} style={{cursor: 'pointer'}}><img src='https://comps.canstockphoto.es/plano-se%C3%B1al-vidrio-lupa-aumentar-eps-vectorial_csp50819942.jpg' onClick={props.onClick}  width='47' height='47'/></a>
+   <a onClick={props.onClick} style={{cursor: 'pointer'}}><img src={require("../loupe_icon.jpg")} onClick={props.onClick}  width='47' height='47'/></a>
    </Form>
    </Sticky>
    </Container>

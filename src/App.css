@@ -63,3 +63,7 @@
   right:20px;
   z-index: 1000;
 }
+
+body{
+  background-color: #eff0f1!important;
+}

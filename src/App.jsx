@@ -106,29 +106,30 @@ class App extends Component {
           : null }
         </div>
         </div>
-        
+      
+            <h1 style={{marginBottom:50}}>Your movie search:</h1>
+
             {this.state.showResults
-            ? <Movies movies={movies.filter(isSearched(query))} />
-            : null }
-            
-            <h1>Your movie search engine:</h1>
-            
-            <Container style={{marginTop:50, marginBottom:50 }}>
+              ? <Movies movies={movies.filter(isSearched(query))} />
+              : null }
+
+
+            <Container style={{marginBottom:50 }}>
               <Row>
               <Col xs={12} sm={4} style={{textAlign:'center'}}>
-              <img src='https://cdn.bestvpn.com/storage/images/bestvpn/2018/07/search-results-150x150-content_image-default.png' style={{width:150, height:150}}/>
+              <img src={require("./search_icon.jpg")} style={{width:150, height:150, marginBottom: 20}}/>
               <h4>Search</h4>
               <p>nfjksdfjkd fhjkfsd jkfsd jf sfsd.</p>
               </Col>
               
               <Col xs={12} sm={4} style={{textAlign:'center'}}>
-              <img src='https://cdn.bestvpn.com/storage/images/bestvpn/2018/07/search-results-150x150-content_image-default.png' style={{width:150, height:150}}/>
+              <img src={require("./features_icon.jpg")} style={{width:150, height:150, marginBottom: 20}}/>
               <h4>Filter</h4>
               <p>nfjksdfjkd fhjkfsd jkfsd jf sfsd.</p>
               </Col>
               
               <Col xs={12} sm={4} style={{textAlign:'center'}}>
-              <img src='https://cdn.bestvpn.com/storage/images/bestvpn/2018/07/search-results-150x150-content_image-default.png' style={{width:150, height:150}}/>
+              <img src={require("./target_icon.jpg")} style={{width:150, height:150, marginBottom: 20}}/>
               <h4>Find</h4>
               <p>nfjksdfjkd fhjkfsd jkfsd jf sfsd.</p>
               </Col>
