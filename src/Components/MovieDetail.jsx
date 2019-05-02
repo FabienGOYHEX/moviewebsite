@@ -4,6 +4,8 @@ This component corresponds to the "modal" of each movie.
 
 import React, { Component } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import ReactPlayer from 'react-player'
+
 
 const API_KEY = "81cccefa5d8106ac2032d82235c675bc";
 
@@ -11,8 +13,8 @@ class MovieDetail extends Component {
   constructor(props) {
     super(props)
     this.state = {
-        trailer: [],
-        movieId: 329996
+        trailers: [],
+        isKeyFetched: false
     }
 
     this.changeApproval = this.changeApproval.bind(this); 
@@ -48,20 +50,35 @@ class MovieDetail extends Component {
   /*onClickTrailer() {
     this.fetchTrailer(this.state.movieId);
   }*/
+  
   changeApproval(){
     this.fetchTrailer()
+    this.fetchValidTrailer()
   }
 
+    fetchValidTrailer(){
+      if(this.state.trailers.length < 1) {
+        this.setState({
+          isKeyFetched : false
+        })  
+        }
+      }
+
+
     fetchTrailer() {
-     const test = `http://api.themoviedb.org/3/movie/${this.state.movieId}/videos?api_key=${API_KEY}`;
+     const test = `http://api.themoviedb.org/3/movie/${this.props.id}/videos?api_key=${API_KEY}`;
      fetch(test)
       .then(response => response.json())
       .then(trailerData => {
           this.setState({
-            trailer: trailerData.results
+            trailers: trailerData.results,
+            isKeyFetched: true
           });
         })
       }
+
+
+
 
   
   render() {
@@ -74,7 +91,13 @@ class MovieDetail extends Component {
          <ModalBody>
          {this.hasBackDropImage()}
          <h3>Movie ID:{this.props.id}</h3>
-         <Button onClick={this.changeApproval()}>Trailer</Button> 
+         <div>
+         <Button onClick={this.changeApproval}>See Trailer</Button>
+         {this.state.isKeyFetched
+         ? <ReactPlayer url={`https://www.youtube.com/watch?v=${this.state.trailers[0].key}`} controls playing />
+         :  null       
+        }
+         </div>
          <h3>Overview:</h3>
          <p>{this.props.overview}</p>
          <p>Average score: {this.props.vote_average}</p>
