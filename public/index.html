@@ -25,27 +25,6 @@
     -->
   <title>Movie Central</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <span class="backTop fas fa-arrow-alt-circle-up fa-3x"></span>
-  <script>
-    $(document).ready(function(){
-      
-      $('.backTop').click(function(){
-        $('body, html').animate({
-          scrollTop: '0px'
-        }, 500);
-      });
-      
-      $(window).scroll(function(){
-        if( $(this).scrollTop() > 0 ){
-          $('.backTop').slideDown(500);
-        } else {
-          $('.backTop').slideUp(500);
-        }
-      });
-      
-    });
-    </script>
-
 </head>
 
 <body>
@@ -62,5 +41,25 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 </body>
+<span class="backTop fas fa-arrow-alt-circle-up fa-3x"></span>
+<script>
+  $(document).ready(function(){
+    
+    $('.backTop').click(function(){
+      $('body, html').animate({
+        scrollTop: '0px'
+      }, 500);
+    });
+    
+    $(window).scroll(function(){
+      if( $(this).scrollTop() > 0 ){
+        $('.backTop').slideDown(500);
+      } else {
+        $('.backTop').slideUp(500);
+      }
+    });
+    
+  });
+  </script>
 
 </html>

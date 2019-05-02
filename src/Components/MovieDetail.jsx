@@ -4,8 +4,50 @@ This component corresponds to the "modal" of each movie.
 
 import React, { Component } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col } from "reactstrap";
+import ReactPlayer from 'react-player';
+
+const API_KEY = "81cccefa5d8106ac2032d82235c675bc";
 
 class MovieDetail extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+        trailers: [],
+        isKeyGood: false,
+        showPlayer: false
+    }
+ this.changeApproval = this.changeApproval.bind(this);
+ this.toggle = this.toggle.bind(this);
+
+  };
+
+/*Fetch Functions*/
+changeApproval(){
+   this.fetchTrailer()
+   this.fetchValidTrailer()
+ }
+
+   fetchValidTrailer(){
+     if(this.state.trailers.length > 0) {
+       this.setState({
+         isKeyGood : true
+
+       })
+       }
+     }
+
+
+   fetchTrailer() {
+    const test = `http://api.themoviedb.org/3/movie/${this.props.id}/videos?api_key=${API_KEY}`;
+    fetch(test)
+     .then(response => response.json())
+     .then(trailerData => {
+        this.setState({
+           trailers: trailerData.results
+         })
+     })
+   }
+
   // It is the function responsible for inserting a still image in the "modal" when the API does not have an image for a particular  movie.*/
   hasBackDropImage = () => {
     if (this.props.backdrop_path === null || this.props.backdrop_path === "") {
@@ -28,6 +70,13 @@ class MovieDetail extends Component {
       );
     }
   };
+
+  // It is the function that allows us to close the trailer.
+  toggle() {
+    this.setState(prevState => ({
+      isOpen: !prevState.isOpen
+    }));
+  }
   
   render() {
     return (
@@ -43,8 +92,18 @@ class MovieDetail extends Component {
            <Col md={12} lg={5}>
            <h4>Overview:</h4>
            <p style={{textAlign:'justify'}}>{this.props.overview}</p>
+           <div style={{display:'flex', justifyContent:'space-between'}}>
            <p><i>Release date: {this.props.release_date}</i></p>
-           <div style={{display:'flex', justifyContent:'space-around', marginTop:40, textAlign:'center'}}>
+           <div>
+           <Button onClick={this.changeApproval} style={{float:'right'}}>See Trailer</Button>
+           
+           {this.state.isKeyGood
+            ? <ReactPlayer isOpen={this.isOpen} toggle={this.toggle} url={`https://www.youtube.com/watch?v=${this.state.trailers[0].key}`} width='100%' controls playing={this.state.showPlayer} />
+            :  null
+          }
+          </div>
+           </div>
+           <div style={{display:'flex', justifyContent:'space-between', marginTop:40, textAlign:'center'}}>
            <div>
            <img src='https://png.pngtree.com/svg/20170619/f30264d79c.png' width='100px' height='100px' style={{marginBottom:15}} alt='score' />
            <p>Average score: {this.props.vote_average}</p>
