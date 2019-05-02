@@ -14,7 +14,7 @@ class MovieDetail extends Component {
     super(props)
     this.state = {
         trailers: [],
-        isKeyFetched: false
+        isKeyGood: false
     }
 
     this.changeApproval = this.changeApproval.bind(this); 
@@ -57,9 +57,9 @@ class MovieDetail extends Component {
   }
 
     fetchValidTrailer(){
-      if(this.state.trailers.length < 1) {
+      if(this.state.trailers.length > 0) {
         this.setState({
-          isKeyFetched : false
+          isKeyGood : true
         })  
         }
       }
@@ -70,12 +70,11 @@ class MovieDetail extends Component {
      fetch(test)
       .then(response => response.json())
       .then(trailerData => {
-          this.setState({
-            trailers: trailerData.results,
-            isKeyFetched: true
-          });
-        })
-      }
+         this.setState({
+            trailers: trailerData.results
+          })
+      })
+    }
 
 
 
@@ -93,7 +92,7 @@ class MovieDetail extends Component {
          <h3>Movie ID:{this.props.id}</h3>
          <div>
          <Button onClick={this.changeApproval}>See Trailer</Button>
-         {this.state.isKeyFetched
+         {this.state.isKeyGood
          ? <ReactPlayer url={`https://www.youtube.com/watch?v=${this.state.trailers[0].key}`} controls playing />
          :  null       
         }
